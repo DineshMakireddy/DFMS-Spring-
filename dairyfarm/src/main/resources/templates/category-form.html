@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Category Form</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+    <header>
+        <img src="/images/logo.png" alt="Dairy Farm Logo" style="height: 50px; vertical-align: middle;">
+        <h1>Category Form</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/categories">Manage Categories</a>
+            <a href="/companies">Manage Companies</a>
+            <a href="/products">Manage Products</a>
+            <a href="/invoices">Manage Invoices</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Category Form</h1>
+        <form th:action="@{/categories}" th:object="${category}" method="post">
+            <input type="hidden" th:field="*{id}" />
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" />
+            <input type="submit" value="Save">
+        </form>
+    </div>
+    <footer>
+        &copy; 2024 Dairy Farm Management System
+    </footer>
+</body>
+</html>
